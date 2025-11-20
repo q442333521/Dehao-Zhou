@@ -1,206 +1,266 @@
 <mxfile host="Electron" modified="2024-01-01T00:00:00.000Z" agent="Draw.io" etag="xxx" version="21.0.0" type="device">
   <diagram name="传统抓取全流程架构" id="traditional-grasp-flow">
-    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="950" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
 
         <!-- Title -->
-        <mxCell id="title" value="传统抓取全流程架构 - 垂直抓取系统" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="320" y="30" width="520" height="40" as="geometry"/>
+        <mxCell id="title" value="传统抓取全流程架构 - 垂直抓取系统" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#0D47A1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="20" width="700" height="50" as="geometry"/>
         </mxCell>
 
         <!-- 硬件采集层 -->
-        <mxCell id="hardware-layer" value="硬件采集层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="80" y="100" width="440" height="40" as="geometry"/>
+        <mxCell id="hardware-layer" value="硬件采集层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A237E;strokeColor=#0D47A1;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="500" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="realsense" value="RealSense D435相机" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="100" y="160" width="140" height="50" as="geometry"/>
+        <mxCell id="realsense" value="RealSense D435&#xa;RGB-D相机&#xa;640×480" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#283593;strokeColor=#1565C0;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="170" width="140" height="70" as="geometry"/>
         </mxCell>
 
-        <mxCell id="rgb-data" value="RGB图像&#xa;640x480" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="260" y="160" width="100" height="50" as="geometry"/>
+        <mxCell id="rgb-data" value="RGB图像&#xa;彩色数据" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00838F;strokeColor=#006064;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="230" y="170" width="140" height="60" as="geometry"/>
         </mxCell>
 
-        <mxCell id="depth-data" value="深度图像&#xa;640x480" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="380" y="160" width="100" height="50" as="geometry"/>
+        <mxCell id="depth-data" value="深度图像&#xa;距离数据(mm)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00838F;strokeColor=#006064;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="390" y="170" width="140" height="60" as="geometry"/>
         </mxCell>
 
         <!-- 视觉处理层 -->
-        <mxCell id="vision-layer" value="视觉处理层 (cv_process.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="80" y="240" width="440" height="40" as="geometry"/>
+        <mxCell id="vision-layer" value="视觉处理层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006064;strokeColor=#00838F;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="270" width="500" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="yolo-detect" value="YOLO-World&#xa;目标检测" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="100" y="300" width="120" height="60" as="geometry"/>
+        <mxCell id="cv-file" value="📄 cv_process.py" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#00838F;strokeColor=#006064;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="335" width="470" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="sam-segment" value="SAM分割&#xa;精确掩码" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="240" y="300" width="120" height="60" as="geometry"/>
+        <mxCell id="yolo-detect" value="YOLO-World检测&#xa;函数: detect_objects()&#xa;输入: 目标类别名称&#xa;输出: bbox边界框" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00ACC1;strokeColor=#0097A7;fontColor=#000000;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="380" width="150" height="85" as="geometry"/>
         </mxCell>
 
-        <mxCell id="mask-result" value="二值掩码&#xa;(0/255)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="380" y="300" width="120" height="60" as="geometry"/>
+        <mxCell id="sam-segment" value="SAM分割&#xa;函数: segment_image()&#xa;模型: sam_b.pt&#xa;输入: bbox/点击&#xa;输出: 精确掩码" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00ACC1;strokeColor=#0097A7;fontColor=#000000;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="230" y="380" width="150" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="mask-result" value="二值掩码处理&#xa;函数: process_sam_results()&#xa;掩码值: 0/255&#xa;轮廓提取: cv2.findContours()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00ACC1;strokeColor=#0097A7;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="400" y="380" width="180" height="90" as="geometry"/>
         </mxCell>
 
         <!-- 垂直抓取算法层 -->
-        <mxCell id="vertical-layer" value="垂直抓取算法层 (vertical_grab/)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="80" y="400" width="440" height="40" as="geometry"/>
+        <mxCell id="vertical-layer" value="垂直抓取算法层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1B5E20;strokeColor=#2E7D32;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="510" width="500" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="object-center" value="计算物体中心&#xa;(质心/轮廓)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="100" y="460" width="130" height="60" as="geometry"/>
+        <mxCell id="vertical-file" value="📄 vertical_grab/interface.py" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="575" width="470" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="depth-query" value="深度查询&#xa;获取Z坐标" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="250" y="460" width="130" height="60" as="geometry"/>
+        <mxCell id="object-center" value="质心计算&#xa;函数: cv2.moments()&#xa;cx = M10/M00&#xa;cy = M01/M00" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#43A047;strokeColor=#388E3C;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="620" width="140" height="80" as="geometry"/>
         </mxCell>
 
-        <mxCell id="vertical-calc" value="垂直位姿计算&#xa;interface.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="400" y="460" width="130" height="60" as="geometry"/>
+        <mxCell id="depth-query" value="深度查询&#xa;z = depth_img[cy, cx]&#xa;获取物体Z坐标&#xa;深度单位转换" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#43A047;strokeColor=#388E3C;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="220" y="620" width="150" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="vertical-calc" value="垂直位姿计算&#xa;函数: vertical_catch()&#xa;固定角度: [3.14, 0, 0]&#xa;计算3个关键位姿" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#43A047;strokeColor=#388E3C;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="390" y="620" width="160" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- 坐标转换层 -->
+        <mxCell id="transform-layer" value="坐标转换层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4A148C;strokeColor=#6A1B9A;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="600" y="100" width="560" height="45" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="convert-file" value="📄 vertical_grab/convert.py" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6A1B9A;strokeColor=#4A148C;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="620" y="165" width="520" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="pixel-to-cam" value="像素→相机坐标&#xa;相机内参变换&#xa;fx, fy, cx, cy&#xa;X = (u-cx)*Z/fx&#xa;Y = (v-cy)*Z/fy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B1FA2;strokeColor=#6A1B9A;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="620" y="210" width="160" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="cam-to-ee" value="相机→末端坐标&#xa;手眼标定&#xa;rotation_matrix[3][3]&#xa;translation_vector[3]&#xa;齐次变换" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B1FA2;strokeColor=#6A1B9A;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="800" y="210" width="160" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="ee-to-base" value="末端→基坐标&#xa;当前机械臂位姿&#xa;Get_Current_Arm_State()&#xa;坐标链式变换" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B1FA2;strokeColor=#6A1B9A;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="980" y="210" width="160" height="100" as="geometry"/>
         </mxCell>
 
         <!-- 三个关键位姿 -->
-        <mxCell id="pose-layer" value="关键位姿生成" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="80" y="560" width="440" height="40" as="geometry"/>
+        <mxCell id="pose-layer" value="关键位姿序列" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E65100;strokeColor=#EF6C00;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="600" y="350" width="560" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="pose1" value="位点1&#xa;above_object_pose&#xa;物体上方位姿" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" vertex="1" parent="1">
-          <mxGeometry x="100" y="620" width="130" height="70" as="geometry"/>
+        <mxCell id="pose1" value="位点1: above_object_pose&#xa;物体上方位姿&#xa;Z轴偏移: +arm_gripper_length&#xa;用于安全接近" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F57C00;strokeColor=#EF6C00;fontColor=#000000;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="620" y="415" width="160" height="90" as="geometry"/>
         </mxCell>
 
-        <mxCell id="pose2" value="位点2&#xa;correct_angle_pose&#xa;角度调整位姿" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" vertex="1" parent="1">
-          <mxGeometry x="250" y="620" width="130" height="70" as="geometry"/>
+        <mxCell id="pose2" value="位点2: correct_angle_pose&#xa;角度调整位姿&#xa;固定垂直角度&#xa;准备下降抓取" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F57C00;strokeColor=#EF6C00;fontColor=#000000;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="800" y="415" width="160" height="90" as="geometry"/>
         </mxCell>
 
-        <mxCell id="pose3" value="位点3&#xa;finally_pose&#xa;最终抓取位姿" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=center;" vertex="1" parent="1">
-          <mxGeometry x="400" y="620" width="130" height="70" as="geometry"/>
-        </mxCell>
-
-        <!-- 坐标转换 -->
-        <mxCell id="transform-layer" value="坐标转换 (convert.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="600" y="100" width="460" height="40" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="pixel-to-cam" value="像素坐标→相机坐标&#xa;(内参变换)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="620" y="160" width="180" height="60" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="cam-to-ee" value="相机坐标→末端坐标&#xa;(手眼标定R,T)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="820" y="160" width="180" height="60" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="ee-to-base" value="末端坐标→基坐标&#xa;(当前位姿)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="620" y="240" width="180" height="60" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="euler-angle" value="固定欧拉角&#xa;[3.14, 0, 0]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="820" y="240" width="180" height="60" as="geometry"/>
+        <mxCell id="pose3" value="位点3: finally_pose&#xa;最终抓取位姿&#xa;接触物体表面&#xa;执行夹取动作" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F57C00;strokeColor=#EF6C00;fontColor=#000000;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="980" y="415" width="160" height="90" as="geometry"/>
         </mxCell>
 
         <!-- 运动控制层 -->
-        <mxCell id="control-layer" value="运动控制层 (grasp.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="600" y="340" width="460" height="40" as="geometry"/>
+        <mxCell id="control-layer" value="运动控制层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#01579B;strokeColor=#0277BD;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="740" width="1120" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="init-pose" value="初始位姿&#xa;[10,15,10,-75,0,0,0]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="620" y="400" width="140" height="60" as="geometry"/>
+        <mxCell id="main-file" value="📄 grasp.py (主程序)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0277BD;strokeColor=#01579B;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="805" width="1080" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="motion-seq" value="运动序列执行&#xa;1.初始位→位点1&#xa;2.位点1→位点2&#xa;3.闭合夹爪&#xa;4.返回初始位&#xa;5.放置位姿" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;" vertex="1" parent="1">
-          <mxGeometry x="780" y="400" width="150" height="120" as="geometry"/>
+        <mxCell id="init-pose" value="初始位姿&#xa;init = [10,15,10,-75,0,0,0]&#xa;Movej_Cmd()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0288D1;strokeColor=#0277BD;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="850" width="160" height="70" as="geometry"/>
         </mxCell>
 
-        <mxCell id="place-pose" value="放置位姿&#xa;[-20,25,0,-90,0,25,0]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="950" y="400" width="140" height="60" as="geometry"/>
+        <mxCell id="motion-seq" value="运动序列执行 (test_vertical_catch)&#xa;1. Movej_P_Cmd(above_object_pose, 10)&#xa;2. Movej_P_Cmd(correct_angle_pose, 10)&#xa;3. Set_Gripper_Pick(200, 25) - 闭合夹爪&#xa;4. Movej_Cmd(init, 10, 0) - 返回初始位&#xa;5. Movej_Cmd(fang, 10, 0) - 移动到放置位&#xa;6. Set_Gripper_Release(100) - 松开夹爪&#xa;7. Movej_Cmd(init, 10, 0) - 返回" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0288D1;strokeColor=#0277BD;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="240" y="850" width="380" height="150" as="geometry"/>
         </mxCell>
 
-        <!-- 机械臂接口 -->
-        <mxCell id="robot-interface" value="机械臂接口 (robotic_arm_package/)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="600" y="560" width="460" height="40" as="geometry"/>
+        <mxCell id="place-pose" value="放置位姿&#xa;fang = [-20,25,0,-90,0,25,0]&#xa;Movej_Cmd()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0288D1;strokeColor=#0277BD;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="640" y="850" width="180" height="70" as="geometry"/>
         </mxCell>
 
-        <mxCell id="movej-p" value="Movej_P_Cmd()&#xa;位姿运动" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="620" y="620" width="130" height="60" as="geometry"/>
+        <mxCell id="robot-api" value="机械臂API&#xa;📄 robotic_arm_package/robotic_arm.py&#xa;类: Arm(ROBOT_TYPE, robot_ip)&#xa;• Get_Current_Arm_State() - 获取状态&#xa;• Movej_P_Cmd() - 位姿运动&#xa;• Movej_Cmd() - 关节运动&#xa;• Set_Gripper_Pick() - 夹爪闭合&#xa;• Set_Gripper_Release() - 夹爪松开&#xa;• Change_Work_Frame() - 切换工作坐标系" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0288D1;strokeColor=#0277BD;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="840" y="850" width="280" height="160" as="geometry"/>
         </mxCell>
 
-        <mxCell id="movej-j" value="Movej_Cmd()&#xa;关节运动" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="770" y="620" width="130" height="60" as="geometry"/>
+        <!-- 系统特性 -->
+        <mxCell id="features-title" value="传统抓取特点" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#37474F;strokeColor=#455A64;fontSize=14;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="600" y="570" width="560" height="40" as="geometry"/>
         </mxCell>
 
-        <mxCell id="gripper-ctrl" value="Set_Gripper_Pick()&#xa;夹爪控制" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="920" y="620" width="140" height="60" as="geometry"/>
+        <mxCell id="feat1" value="✓ 固定垂直角度，简化计算" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="620" y="625" width="250" height="35" as="geometry"/>
         </mxCell>
 
-        <!-- 特性标注 -->
-        <mxCell id="feature-box" value="传统抓取特点" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="80" y="720" width="980" height="30" as="geometry"/>
+        <mxCell id="feat2" value="✓ 实时性好，响应速度快" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="890" y="625" width="250" height="35" as="geometry"/>
         </mxCell>
 
-        <mxCell id="f1" value="✓ 固定垂直角度抓取" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="100" y="760" width="200" height="30" as="geometry"/>
+        <mxCell id="feat3" value="✓ 适合规则物体抓取" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="620" y="675" width="250" height="35" as="geometry"/>
         </mxCell>
 
-        <mxCell id="f2" value="✓ 计算速度快，实时性好" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="320" y="760" width="200" height="30" as="geometry"/>
+        <mxCell id="feat4" value="✓ 无需复杂模型训练" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="890" y="675" width="250" height="35" as="geometry"/>
         </mxCell>
 
-        <mxCell id="f3" value="✓ 适合规则物体" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="540" y="760" width="200" height="30" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="f4" value="✓ 无需复杂模型训练" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="760" y="760" width="200" height="30" as="geometry"/>
-        </mxCell>
-
-        <!-- 数据流箭头 -->
-        <mxCell id="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="realsense" target="rgb-data">
+        <!-- 数据流箭头 - 优化布局 -->
+        <mxCell id="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#283593;strokeColor=#1565C0;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="realsense" target="rgb-data">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="realsense" target="depth-data">
+        <mxCell id="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#283593;strokeColor=#1565C0;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="realsense" target="depth-data">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="a3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="rgb-data" target="yolo-detect">
+        <mxCell id="a3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#00ACC1;strokeColor=#0097A7;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="rgb-data" target="yolo-detect">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="250"/>
+              <mxPoint x="105" y="250"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="a4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#00ACC1;strokeColor=#0097A7;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="yolo-detect" target="sam-segment">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="a4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="yolo-detect" target="sam-segment">
+        <mxCell id="a5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#00ACC1;strokeColor=#0097A7;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="sam-segment" target="mask-result">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="a5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="sam-segment" target="mask-result">
+        <mxCell id="a6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#43A047;strokeColor=#388E3C;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="mask-result" target="object-center">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="454" y="500"/>
+              <mxPoint x="130" y="500"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="a7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#43A047;strokeColor=#388E3C;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="object-center" target="depth-query">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="a6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1" source="mask-result" target="object-center">
+        <mxCell id="a8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#43A047;strokeColor=#388E3C;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="depth-query" target="vertical-calc">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="a7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1" source="object-center" target="depth-query">
+        <mxCell id="a9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#7B1FA2;strokeColor=#6A1B9A;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="vertical-calc" target="pixel-to-cam">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="570" y="660"/>
+              <mxPoint x="570" y="340"/>
+              <mxPoint x="700" y="340"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="a10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#7B1FA2;strokeColor=#6A1B9A;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="pixel-to-cam" target="cam-to-ee">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="a8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1" source="depth-query" target="vertical-calc">
+        <mxCell id="a11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#7B1FA2;strokeColor=#6A1B9A;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="cam-to-ee" target="ee-to-base">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="a9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="vertical-calc" target="pose1">
+        <mxCell id="a12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#F57C00;strokeColor=#EF6C00;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="ee-to-base" target="pose1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="340"/>
+              <mxPoint x="668" y="340"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="a13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#F57C00;strokeColor=#EF6C00;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="pose1" target="pose2">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="a10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="pose1" target="pose2">
+        <mxCell id="a14" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#F57C00;strokeColor=#EF6C00;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="pose2" target="pose3">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="a11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="pose2" target="pose3">
+        <mxCell id="a15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#0288D1;strokeColor=#0277BD;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="pose3" target="motion-seq">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="540"/>
+              <mxPoint x="1200" y="540"/>
+              <mxPoint x="1200" y="820"/>
+              <mxPoint x="430" y="820"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="a16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#0288D1;strokeColor=#0277BD;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="motion-seq" target="robot-api">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="a12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="pose3" target="motion-seq">
-          <mxGeometry relative="1" as="geometry"/>
+        <!-- 标注 -->
+        <mxCell id="label1" value="RGB-D流" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#1565C0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="210" y="140" width="70" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="label2" value="检测分割" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0097A7;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="355" width="70" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="label3" value="位姿计算" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#388E3C;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="560" y="575" width="70" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="label4" value="坐标转换" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#6A1B9A;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="870" y="185" width="70" height="20" as="geometry"/>
         </mxCell>
 
       </root>
