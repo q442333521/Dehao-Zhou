@@ -1,198 +1,224 @@
 <mxfile host="Electron" modified="2024-01-01T00:00:00.000Z" agent="Draw.io" etag="xxx" version="21.0.0" type="device">
   <diagram name="GraspNet全流程架构" id="graspnet-flow">
-    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1000" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
 
         <!-- Title -->
-        <mxCell id="title" value="GraspNet全流程架构 - 深度学习抓取系统" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="340" y="30" width="480" height="40" as="geometry"/>
+        <mxCell id="title" value="GraspNet全流程架构 - 深度学习抓取系统" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#0D47A1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="20" width="760" height="50" as="geometry"/>
         </mxCell>
 
         <!-- 硬件层 -->
-        <mxCell id="hardware-layer" value="硬件层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="80" y="100" width="160" height="40" as="geometry"/>
+        <mxCell id="hardware-layer" value="硬件层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A237E;strokeColor=#0D47A1;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="200" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="realsense" value="RealSense D435&#xa;RGB-D相机" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="40" y="160" width="120" height="60" as="geometry"/>
+        <mxCell id="realsense" value="RealSense D435&#xa;RGB-D相机&#xa;640×480@30fps" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#283593;strokeColor=#1565C0;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="160" width="160" height="70" as="geometry"/>
         </mxCell>
 
-        <mxCell id="robot-arm" value="机械臂&#xa;(RM65)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="180" y="160" width="120" height="60" as="geometry"/>
-        </mxCell>
-
-        <!-- 数据采集层 -->
-        <mxCell id="data-layer" value="数据采集层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="360" y="100" width="160" height="40" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="color-img" value="彩色图像&#xa;(640x480)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="320" y="160" width="100" height="60" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="depth-img" value="深度图像&#xa;(640x480)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="440" y="160" width="100" height="60" as="geometry"/>
+        <mxCell id="robot-arm" value="机械臂 RM65&#xa;6自由度&#xa;负载5kg" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#283593;strokeColor=#1565C0;fontColor=#FFFFFF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="250" width="160" height="70" as="geometry"/>
         </mxCell>
 
         <!-- 视觉处理层 -->
-        <mxCell id="vision-layer" value="视觉处理层 (cv_process.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="80" y="260" width="460" height="40" as="geometry"/>
+        <mxCell id="vision-layer" value="视觉处理层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006064;strokeColor=#00838F;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="280" y="90" width="240" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="yolo-world" value="YOLO-World&#xa;目标检测" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="100" y="320" width="120" height="60" as="geometry"/>
+        <mxCell id="cv-process-file" value="📄 cv_process.py" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#00838F;strokeColor=#006064;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="300" y="155" width="200" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="sam" value="SAM模型&#xa;实例分割" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="250" y="320" width="120" height="60" as="geometry"/>
+        <mxCell id="yolo-world" value="YOLO-World检测&#xa;函数: detect_objects()&#xa;输出: bbox坐标" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00ACC1;strokeColor=#0097A7;fontColor=#000000;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="300" y="200" width="200" height="65" as="geometry"/>
         </mxCell>
 
-        <mxCell id="mask-output" value="分割掩码&#xa;(mask.png)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="400" y="320" width="120" height="60" as="geometry"/>
+        <mxCell id="sam" value="SAM实例分割&#xa;函数: segment_image()&#xa;模型: sam_b.pt&#xa;输出: 二值掩码" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00ACC1;strokeColor=#0097A7;fontColor=#000000;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="300" y="280" width="200" height="80" as="geometry"/>
         </mxCell>
 
         <!-- GraspNet推理层 -->
-        <mxCell id="graspnet-layer" value="GraspNet推理层 (grasp_process.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="80" y="420" width="460" height="40" as="geometry"/>
+        <mxCell id="graspnet-layer" value="GraspNet推理层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1B5E20;strokeColor=#2E7D32;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="560" y="90" width="280" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="pointcloud" value="点云生成&#xa;(create_point_cloud)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="100" y="480" width="130" height="60" as="geometry"/>
+        <mxCell id="grasp-process-file" value="📄 grasp_process.py" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="580" y="155" width="240" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="graspnet-model" value="GraspNet模型&#xa;位姿预测" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="260" y="480" width="130" height="60" as="geometry"/>
+        <mxCell id="pointcloud" value="点云生成&#xa;函数: get_and_process_data()&#xa;create_point_cloud_from_depth_image()&#xa;采样: 10000点" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#43A047;strokeColor=#388E3C;fontColor=#000000;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="580" y="200" width="240" height="75" as="geometry"/>
         </mxCell>
 
-        <mxCell id="collision-detect" value="碰撞检测&#xa;+NMS去重" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="420" y="480" width="130" height="60" as="geometry"/>
+        <mxCell id="graspnet-model" value="GraspNet模型推理&#xa;函数: run_grasp_inference()&#xa;权重: checkpoint-rs.tar&#xa;输出: 位姿+旋转+宽度" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#43A047;strokeColor=#388E3C;fontColor=#000000;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="580" y="290" width="240" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="collision-detect" value="碰撞检测+NMS&#xa;函数: collision_detection()&#xa;gg.nms().sort_by_score()&#xa;垂直角度筛选: ±30°" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#43A047;strokeColor=#388E3C;fontColor=#000000;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="580" y="385" width="240" height="80" as="geometry"/>
         </mxCell>
 
         <!-- 坐标转换层 -->
-        <mxCell id="transform-layer" value="坐标转换层 (convert_d.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="80" y="580" width="460" height="40" as="geometry"/>
+        <mxCell id="transform-layer" value="坐标转换层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4A148C;strokeColor=#6A1B9A;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="880" y="90" width="240" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="hand-eye" value="手眼标定参数&#xa;(R, T)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="100" y="640" width="130" height="60" as="geometry"/>
+        <mxCell id="convert-file" value="📄 convert_d.py" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6A1B9A;strokeColor=#4A148C;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="900" y="155" width="200" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="coord-trans" value="相机坐标→&#xa;机械臂基坐标" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="260" y="640" width="130" height="60" as="geometry"/>
+        <mxCell id="hand-eye" value="手眼标定参数&#xa;rotation_matrix[3][3]&#xa;translation_vector[3]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B1FA2;strokeColor=#6A1B9A;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="900" y="200" width="200" height="65" as="geometry"/>
         </mxCell>
 
-        <mxCell id="grasp-pose" value="最终抓取位姿&#xa;[x,y,z,rx,ry,rz]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="420" y="640" width="130" height="60" as="geometry"/>
+        <mxCell id="coord-trans" value="坐标变换&#xa;函数: convert_new()&#xa;相机坐标→末端坐标→基坐标&#xa;齐次变换矩阵运算" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B1FA2;strokeColor=#6A1B9A;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="900" y="280" width="200" height="85" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="grasp-pose" value="最终抓取位姿&#xa;[x, y, z, rx, ry, rz]&#xa;基坐标系表示" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B1FA2;strokeColor=#6A1B9A;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="900" y="380" width="200" height="70" as="geometry"/>
         </mxCell>
 
         <!-- 运动控制层 -->
-        <mxCell id="control-layer" value="运动控制层 (grasp.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="600" y="100" width="520" height="40" as="geometry"/>
+        <mxCell id="control-layer" value="运动控制层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E65100;strokeColor=#EF6C00;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="280" y="510" width="840" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="pre-grasp" value="预抓取位姿计算&#xa;(偏移0.1m)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="620" y="160" width="140" height="60" as="geometry"/>
+        <mxCell id="main-file" value="📄 grasp.py (主程序)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EF6C00;strokeColor=#E65100;fontColor=#FFFFFF;fontSize=12;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="300" y="575" width="800" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="motion-plan" value="运动规划序列&#xa;1.预抓取&#xa;2.抓取&#xa;3.初始位&#xa;4.放置位" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;" vertex="1" parent="1">
-          <mxGeometry x="780" y="160" width="140" height="100" as="geometry"/>
+        <mxCell id="pre-grasp" value="预抓取计算&#xa;函数: test_grasp()&#xa;沿Z轴偏移: 0.1m&#xa;pre_grasp_pose计算" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F57C00;strokeColor=#EF6C00;fontColor=#000000;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="300" y="620" width="180" height="85" as="geometry"/>
         </mxCell>
 
-        <mxCell id="gripper-control" value="夹爪控制&#xa;Pick/Release" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="940" y="160" width="140" height="60" as="geometry"/>
+        <mxCell id="motion-plan" value="运动序列规划&#xa;1. Movej_P_Cmd(pre_grasp_pose)&#xa;2. Movej_P_Cmd(grasp_pose)&#xa;3. Set_Gripper_Pick(200, 300)&#xa;4. Movej_Cmd(init_pose)&#xa;5. Movej_Cmd(place_pose)&#xa;6. Set_Gripper_Release(200)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F57C00;strokeColor=#EF6C00;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="500" y="620" width="260" height="130" as="geometry"/>
         </mxCell>
 
-        <!-- 配置模块 -->
-        <mxCell id="config-module" value="配置模块" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="600" y="300" width="520" height="40" as="geometry"/>
+        <mxCell id="robot-api" value="机械臂API&#xa;📄 robotic_arm.py&#xa;类: Arm()&#xa;• Get_Current_Arm_State()&#xa;• Movej_P_Cmd()&#xa;• Set_Gripper_Pick()&#xa;• Set_Gripper_Release()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F57C00;strokeColor=#EF6C00;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="780" y="620" width="200" height="140" as="geometry"/>
         </mxCell>
 
-        <mxCell id="camera-intr" value="相机内参&#xa;fx,fy,cx,cy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="620" y="360" width="130" height="60" as="geometry"/>
+        <!-- 配置参数 -->
+        <mxCell id="config-box" value="配置参数" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#37474F;strokeColor=#455A64;fontSize=14;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="200" height="40" as="geometry"/>
         </mxCell>
 
-        <mxCell id="robot-config" value="机械臂配置&#xa;config.yaml" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="780" y="360" width="130" height="60" as="geometry"/>
+        <mxCell id="camera-params" value="📄 相机内参 (grasp.py)&#xa;color_intr: fx=604.248&#xa;depth_intr: fx=387.897&#xa;分辨率: 640×480" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="435" width="180" height="80" as="geometry"/>
         </mxCell>
 
-        <mxCell id="graspnet-weight" value="GraspNet权重&#xa;checkpoint-rs.tar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="940" y="360" width="140" height="60" as="geometry"/>
+        <mxCell id="init-poses" value="预设位姿&#xa;init=[5,15,10,-75,0,0,0]&#xa;fang=[-20,25,0,-90,0,25,0]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="530" width="180" height="70" as="geometry"/>
         </mxCell>
 
         <!-- 关键特性 -->
-        <mxCell id="features" value="关键特性" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="600" y="460" width="520" height="40" as="geometry"/>
+        <mxCell id="features-title" value="关键特性" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#01579B;strokeColor=#0277BD;fontSize=14;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="650" width="200" height="40" as="geometry"/>
         </mxCell>
 
-        <mxCell id="feature1" value="✓ 深度学习6-DOF抓取" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="620" y="520" width="220" height="40" as="geometry"/>
+        <mxCell id="feat1" value="✓ 6-DOF深度学习抓取" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0288D1;strokeColor=#0277BD;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="705" width="180" height="35" as="geometry"/>
         </mxCell>
 
-        <mxCell id="feature2" value="✓ 自动目标检测与分割" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="860" y="520" width="220" height="40" as="geometry"/>
+        <mxCell id="feat2" value="✓ 自动碰撞检测与优化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0288D1;strokeColor=#0277BD;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="750" width="180" height="35" as="geometry"/>
         </mxCell>
 
-        <mxCell id="feature3" value="✓ 碰撞检测与位姿优化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="620" y="580" width="220" height="40" as="geometry"/>
+        <mxCell id="feat3" value="✓ 精确手眼标定转换" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0288D1;strokeColor=#0277BD;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="795" width="180" height="35" as="geometry"/>
         </mxCell>
 
-        <mxCell id="feature4" value="✓ 手眼标定坐标转换" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="860" y="580" width="220" height="40" as="geometry"/>
+        <mxCell id="feat4" value="✓ 实时RGB-D处理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0288D1;strokeColor=#0277BD;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="840" width="180" height="35" as="geometry"/>
         </mxCell>
 
-        <!-- 数据流箭头 -->
-        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="realsense" target="color-img">
+        <!-- 数据流箭头 - 优化布局避免遮挡 -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#283593;strokeColor=#1565C0;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="realsense" target="yolo-world">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="195"/>
+              <mxPoint x="260" y="220"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#00ACC1;strokeColor=#0097A7;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="yolo-world" target="sam">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="realsense" target="depth-img">
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#43A047;strokeColor=#388E3C;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="sam" target="pointcloud">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="320"/>
+              <mxPoint x="540" y="223"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#43A047;strokeColor=#388E3C;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="pointcloud" target="graspnet-model">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="color-img" target="yolo-world">
+        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#43A047;strokeColor=#388E3C;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="graspnet-model" target="collision-detect">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="yolo-world" target="sam">
+        <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#7B1FA2;strokeColor=#6A1B9A;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="collision-detect" target="coord-trans">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="425"/>
+              <mxPoint x="860" y="306"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#7B1FA2;strokeColor=#6A1B9A;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="coord-trans" target="grasp-pose">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="sam" target="mask-output">
+        <mxCell id="arrow8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#F57C00;strokeColor=#EF6C00;exitX=0.5;exitY=1;entryX=0.8;entryY=0;" edge="1" parent="1" source="grasp-pose" target="pre-grasp">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="490"/>
+              <mxPoint x="444" y="490"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#F57C00;strokeColor=#EF6C00;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="pre-grasp" target="motion-plan">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1" source="mask-output" target="pointcloud">
+        <mxCell id="arrow10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#F57C00;strokeColor=#EF6C00;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="motion-plan" target="robot-api">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1" source="pointcloud" target="graspnet-model">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="arrow11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#EF6C00;strokeColor=#E65100;exitX=1;exitY=0.5;entryX=0.5;entryY=1;dashed=1;" edge="1" parent="1" source="robot-api" target="robot-arm">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1150" y="690"/>
+              <mxPoint x="1150" y="900"/>
+              <mxPoint x="140" y="900"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
 
-        <mxCell id="arrow8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1" source="graspnet-model" target="collision-detect">
-          <mxGeometry relative="1" as="geometry"/>
+        <!-- 标注 -->
+        <mxCell id="label1" value="RGB-D数据流" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="170" width="80" height="20" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="collision-detect" target="coord-trans">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="label2" value="点云+掩码" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#388E3C;" vertex="1" parent="1">
+          <mxGeometry x="520" y="240" width="80" height="20" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="coord-trans" target="grasp-pose">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="arrow11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="grasp-pose" target="pre-grasp">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="arrow12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="pre-grasp" target="motion-plan">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="arrow13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="motion-plan" target="robot-arm">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="label3" value="抓取位姿" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#6A1B9A;" vertex="1" parent="1">
+          <mxGeometry x="840" y="340" width="70" height="20" as="geometry"/>
         </mxCell>
 
       </root>

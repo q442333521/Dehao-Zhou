@@ -1,251 +1,309 @@
 <mxfile host="Electron" modified="2024-01-01T00:00:00.000Z" agent="Draw.io" etag="xxx" version="21.0.0" type="device">
   <diagram name="多模态交互式抓取架构" id="multimodal-grasp">
-    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="1800" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
 
         <!-- Title -->
-        <mxCell id="title" value="多模态交互式抓取架构 - 语音+视觉+AI理解" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontStyle=1;fontColor=#d6600a;" vertex="1" parent="1">
-          <mxGeometry x="280" y="20" width="840" height="40" as="geometry"/>
+        <mxCell id="title" value="多模态交互式抓取架构 - 语音+视觉+AI理解" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontStyle=1;fontColor=#B71C1C;" vertex="1" parent="1">
+          <mxGeometry x="280" y="15" width="1040" height="50" as="geometry"/>
         </mxCell>
 
         <!-- 用户交互层 -->
-        <mxCell id="user-layer" value="用户交互层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="40" y="80" width="200" height="40" as="geometry"/>
+        <mxCell id="user-layer" value="用户交互层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A237E;strokeColor=#0D47A1;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="240" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="user-icon" value="👤 用户" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=16;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="90" y="140" width="100" height="100" as="geometry"/>
+        <mxCell id="user-icon" value="👤 用户" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFA726;strokeColor=#EF6C00;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="110" y="160" width="100" height="100" as="geometry"/>
         </mxCell>
 
-        <mxCell id="voice-input" value="🎙️ 语音指令&#xa;&quot;拿起红色苹果&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="60" y="260" width="160" height="60" as="geometry"/>
+        <mxCell id="voice-input" value="🎙️ 语音指令输入&#xa;&quot;请帮我拿起红色的苹果&quot;&#xa;自然语言描述目标" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCC80;strokeColor=#FB8C00;fontColor=#000000;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="50" y="280" width="220" height="70" as="geometry"/>
         </mxCell>
 
         <!-- 语音处理层 -->
-        <mxCell id="speech-layer" value="语音处理层 (vlm_process.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="280" y="80" width="280" height="40" as="geometry"/>
+        <mxCell id="speech-layer" value="语音处理层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006064;strokeColor=#00838F;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="320" y="90" width="300" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="asr" value="ASR语音识别&#xa;API: 192.168.1.6:3003&#xa;输入: mp3音频&#xa;输出: 文本" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="300" y="140" width="240" height="80" as="geometry"/>
+        <mxCell id="asr-file" value="📄 vlm_process.py - 语音识别模块" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#00838F;strokeColor=#006064;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="340" y="155" width="260" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="text-result" value="📝 识别文本&#xa;&quot;请帮我拿起红色的苹果&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="300" y="240" width="240" height="60" as="geometry"/>
+        <mxCell id="asr" value="ASR语音识别服务&#xa;函数: speech_to_text()&#xa;API: 192.168.1.6:3003&#xa;输入: mp3音频文件&#xa;输出: 识别文本" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00ACC1;strokeColor=#0097A7;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="340" y="200" width="260" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="text-result" value="📝 识别文本结果&#xa;text = &quot;请帮我拿起红色的苹果&quot;&#xa;函数: voice_command_to_keyword()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4DD0E1;strokeColor=#00ACC1;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="340" y="305" width="260" height="65" as="geometry"/>
         </mxCell>
 
         <!-- 视觉采集层 -->
-        <mxCell id="vision-input" value="视觉采集层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="600" y="80" width="260" height="40" as="geometry"/>
+        <mxCell id="vision-input" value="视觉采集层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1B5E20;strokeColor=#2E7D32;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="660" y="90" width="280" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="camera" value="📷 RealSense D435&#xa;1280x720" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="620" y="140" width="110" height="60" as="geometry"/>
+        <mxCell id="camera" value="📷 RealSense D435&#xa;分辨率: 1280×720@30fps&#xa;深度范围: 0.3-3m" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#43A047;strokeColor=#388E3C;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="680" y="160" width="120" height="70" as="geometry"/>
         </mxCell>
 
-        <mxCell id="color-img-multi" value="彩色图像" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="620" y="220" width="110" height="40" as="geometry"/>
+        <mxCell id="color-img-multi" value="彩色图像&#xa;BGR格式" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#81C784;strokeColor=#66BB6A;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="680" y="245" width="110" height="50" as="geometry"/>
         </mxCell>
 
-        <mxCell id="depth-img-multi" value="深度图像" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="750" y="220" width="110" height="40" as="geometry"/>
+        <mxCell id="depth-img-multi" value="深度图像&#xa;Z16格式" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#81C784;strokeColor=#66BB6A;fontColor=#000000;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="810" y="245" width="110" height="50" as="geometry"/>
         </mxCell>
 
         <!-- 多模态理解层 -->
-        <mxCell id="vlm-layer" value="多模态理解层 (Qwen2.5-VL)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="40" y="360" width="820" height="40" as="geometry"/>
+        <mxCell id="vlm-layer" value="多模态理解层 (Qwen2.5-VL)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E65100;strokeColor=#EF6C00;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="410" width="900" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="vlm-server" value="🧠 Qwen2.5-VL服务器&#xa;API: 192.168.1.6:1034&#xa;模型: qwen7b" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;fontSize=12;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="60" y="420" width="200" height="80" as="geometry"/>
+        <mxCell id="vlm-file" value="📄 vlm_process.py - 多模态推理模块" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EF6C00;strokeColor=#E65100;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="475" width="860" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="vlm-input" value="输入:&#xa;• 彩色图像(base64)&#xa;• 文本指令" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;" vertex="1" parent="1">
-          <mxGeometry x="280" y="420" width="160" height="80" as="geometry"/>
+        <mxCell id="vlm-server" value="🧠 Qwen2.5-VL服务器&#xa;函数: generate_robot_actions()&#xa;API: 192.168.1.6:1034&#xa;模型: qwen7b&#xa;类型: 视觉+语言多模态" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F57C00;strokeColor=#EF6C00;fontColor=#000000;fontSize=10;align=left;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="520" width="220" height="100" as="geometry"/>
         </mxCell>
 
-        <mxCell id="vlm-output" value="输出:&#xa;• 自然语言回应&#xa;• 物体边界框 bbox&#xa;  [x1,y1,x2,y2]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="460" y="420" width="180" height="80" as="geometry"/>
+        <mxCell id="vlm-input" value="输入数据:&#xa;• 彩色图像(base64编码)&#xa;  函数: encode_np_array()&#xa;• 文本指令(用户语音)&#xa;• System Prompt(任务描述)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCC80;strokeColor=#FB8C00;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="300" y="520" width="200" height="100" as="geometry"/>
         </mxCell>
 
-        <mxCell id="tts" value="🔊 TTS语音播报&#xa;API: 192.168.1.6:3002&#xa;&quot;好的,我看到了红色的苹果&#xa;正在为您抓取~&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;" vertex="1" parent="1">
-          <mxGeometry x="660" y="420" width="200" height="80" as="geometry"/>
+        <mxCell id="vlm-output" value="输出结果:&#xa;• natural_response&#xa;  (自然语言回应)&#xa;• coordinates&#xa;  bbox: [x1,y1,x2,y2]&#xa;  name: 物体名称" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5D6A7;strokeColor=#66BB6A;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="520" y="520" width="180" height="110" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="tts" value="🔊 TTS语音播报&#xa;函数: play_tts()&#xa;API: 192.168.1.6:3002&#xa;语音: &quot;好的,我看到了红色的苹果&#xa;正在为您抓取~&quot;&#xa;模型: cosyvoice" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE082;strokeColor=#FFD54F;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="720" y="520" width="200" height="120" as="geometry"/>
         </mxCell>
 
         <!-- SAM分割层 -->
-        <mxCell id="sam-layer" value="精确分割层 (SAM)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="40" y="540" width="820" height="40" as="geometry"/>
+        <mxCell id="sam-layer" value="精确分割层 (SAM)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4A148C;strokeColor=#6A1B9A;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="670" width="900" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="sam-model" value="SAM模型&#xa;sam_b.pt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="60" y="600" width="120" height="60" as="geometry"/>
+        <mxCell id="sam-file" value="📄 vlm_process.py - SAM分割函数" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6A1B9A;strokeColor=#4A148C;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="735" width="860" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="sam-bbox" value="输入: bbox提示&#xa;或点击坐标" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="200" y="600" width="140" height="60" as="geometry"/>
+        <mxCell id="sam-model" value="SAM模型&#xa;模型文件: sam_b.pt&#xa;函数: choose_model()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B1FA2;strokeColor=#6A1B9A;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="780" width="150" height="70" as="geometry"/>
         </mxCell>
 
-        <mxCell id="sam-mask" value="输出: 精确掩码&#xa;(二值图像)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="360" y="600" width="140" height="60" as="geometry"/>
+        <mxCell id="sam-bbox" value="输入: bbox提示&#xa;或手动点击坐标&#xa;predictor(bboxes=[bbox])&#xa;predictor(points=[x,y])" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BA68C8;strokeColor=#9C27B0;fontColor=#000000;fontSize=9;align=left;" vertex="1" parent="1">
+          <mxGeometry x="230" y="780" width="160" height="70" as="geometry"/>
         </mxCell>
 
-        <mxCell id="sam-center" value="计算质心&#xa;(cx, cy)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="520" y="600" width="120" height="60" as="geometry"/>
+        <mxCell id="sam-mask" value="输出: 精确掩码&#xa;函数: process_sam_results()&#xa;二值图像(0/255)&#xa;轮廓: cv2.findContours()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#CE93D8;strokeColor=#BA68C8;fontColor=#000000;fontSize=9;align=left;" vertex="1" parent="1">
+          <mxGeometry x="410" y="780" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="sam-center" value="质心计算&#xa;cx = M10/M00&#xa;cy = M01/M00" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#CE93D8;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="610" y="780" width="130" height="60" as="geometry"/>
         </mxCell>
 
         <!-- GraspNet推理层 -->
-        <mxCell id="graspnet-infer" value="GraspNet推理层 (grasp_process.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="900" y="80" width="460" height="40" as="geometry"/>
+        <mxCell id="graspnet-infer" value="GraspNet推理层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#01579B;strokeColor=#0277BD;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="90" width="540" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="pointcloud-gen" value="点云生成&#xa;(深度+掩码)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="920" y="140" width="130" height="60" as="geometry"/>
+        <mxCell id="graspnet-file" value="📄 grasp_process.py" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0277BD;strokeColor=#01579B;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="155" width="500" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="graspnet-pred" value="GraspNet预测&#xa;位姿+宽度" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="1070" y="140" width="130" height="60" as="geometry"/>
+        <mxCell id="pointcloud-gen" value="点云生成&#xa;函数: get_and_process_data()&#xa;create_point_cloud_from_depth&#xa;采样: 10000点" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0288D1;strokeColor=#0277BD;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="200" width="150" height="80" as="geometry"/>
         </mxCell>
 
-        <mxCell id="collision-check" value="碰撞检测&#xa;NMS去重" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="1220" y="140" width="130" height="60" as="geometry"/>
+        <mxCell id="graspnet-pred" value="GraspNet模型&#xa;函数: run_grasp_inference()&#xa;网络: GraspNet()&#xa;权重: checkpoint-rs.tar&#xa;输出: 位姿+旋转+宽度" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0288D1;strokeColor=#0277BD;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="200" width="160" height="100" as="geometry"/>
         </mxCell>
 
-        <mxCell id="best-grasp" value="最优抓取&#xa;translation&#xa;rotation_matrix&#xa;width" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="1070" y="220" width="130" height="80" as="geometry"/>
+        <mxCell id="collision-check" value="碰撞检测+优化&#xa;collision_detection()&#xa;gg.nms()&#xa;sort_by_score()&#xa;垂直角度筛选±30°" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0288D1;strokeColor=#0277BD;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="200" width="150" height="100" as="geometry"/>
         </mxCell>
 
-        <!-- 坐标转换层 -->
-        <mxCell id="coord-layer" value="坐标转换层 (convert_d.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="900" y="340" width="460" height="40" as="geometry"/>
+        <!-- 坐标转换+运动控制 -->
+        <mxCell id="coord-motion-layer" value="坐标转换+运动控制层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1B5E20;strokeColor=#2E7D32;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="340" width="540" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="hand-eye-calib" value="手眼标定参数&#xa;R(3x3), T(3x1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="920" y="400" width="140" height="60" as="geometry"/>
+        <mxCell id="convert-file-multi" value="📄 convert_d.py / grasp.py" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=#1B5E20;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="405" width="500" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="pose-transform" value="齐次变换&#xa;相机→基坐标" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="1080" y="400" width="140" height="60" as="geometry"/>
+        <mxCell id="hand-eye-calib" value="手眼标定&#xa;rotation_matrix[3][3]&#xa;translation_vector[3]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#43A047;strokeColor=#388E3C;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="450" width="140" height="70" as="geometry"/>
         </mxCell>
 
-        <mxCell id="final-pose" value="最终抓取位姿&#xa;[x,y,z,rx,ry,rz]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
-          <mxGeometry x="1240" y="400" width="140" height="60" as="geometry"/>
+        <mxCell id="pose-transform" value="齐次变换&#xa;函数: convert_new()&#xa;相机→基坐标" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66BB6A;strokeColor=#43A047;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="450" width="140" height="70" as="geometry"/>
         </mxCell>
 
-        <!-- 运动控制层 -->
-        <mxCell id="motion-layer" value="运动控制层 (grasp.py)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="900" y="500" width="460" height="40" as="geometry"/>
+        <mxCell id="final-pose" value="最终位姿&#xa;[x,y,z,rx,ry,rz]&#xa;基坐标系" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#81C784;strokeColor=#66BB6A;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="450" width="120" height="70" as="geometry"/>
         </mxCell>
 
-        <mxCell id="pre-grasp-calc" value="预抓取计算&#xa;沿Z轴偏移0.08m" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
-          <mxGeometry x="920" y="560" width="140" height="60" as="geometry"/>
+        <mxCell id="motion-control" value="运动控制&#xa;函数: test_grasp()&#xa;1. 预抓取(偏移0.08m)&#xa;2. 实际抓取&#xa;3. 闭合夹爪(200,300)&#xa;4. 初始位→放置位&#xa;5. 松开夹爪" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5D6A7;strokeColor=#81C784;fontColor=#000000;fontSize=9;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="540" width="180" height="130" as="geometry"/>
         </mxCell>
 
-        <mxCell id="motion-execute" value="运动执行序列&#xa;1.预抓取位姿&#xa;2.实际抓取位姿&#xa;3.闭合夹爪&#xa;4.初始位→放置位&#xa;5.松开夹爪" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;" vertex="1" parent="1">
-          <mxGeometry x="1080" y="560" width="160" height="120" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="robot-control" value="机械臂控制&#xa;Movej_P_Cmd()&#xa;Set_Gripper_Pick()" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;" vertex="1" parent="1">
-          <mxGeometry x="1260" y="560" width="140" height="80" as="geometry"/>
+        <mxCell id="robot-control" value="机械臂API&#xa;📄 robotic_arm.py&#xa;类: Arm()&#xa;• Movej_P_Cmd()&#xa;• Set_Gripper_Pick()&#xa;• Set_Gripper_Release()" style="rounded=1;whiteSpace=wrap;html=1;fillColor="#C5E1A5;strokeColor=#AED581;fontColor=#000000;fontSize=9;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="540" width="160" height="110" as="geometry"/>
         </mxCell>
 
         <!-- 系统特性 -->
-        <mxCell id="features-layer" value="系统特性" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="40" y="720" width="1320" height="40" as="geometry"/>
+        <mxCell id="features-layer" value="系统特性与优势" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#37474F;strokeColor=#455A64;fontSize=14;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="900" width="1500" height="40" as="geometry"/>
         </mxCell>
 
-        <mxCell id="feat1" value="✅ 语音交互，自然语言理解" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="60" y="780" width="300" height="40" as="geometry"/>
+        <mxCell id="feat1" value="✅ 语音交互，自然语言理解目标" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="960" width="340" height="35" as="geometry"/>
         </mxCell>
 
-        <mxCell id="feat2" value="✅ 多模态AI(视觉+语言)联合推理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="380" y="780" width="300" height="40" as="geometry"/>
+        <mxCell id="feat2" value="✅ 多模态AI(图像+文本)联合推理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="420" y="960" width="340" height="35" as="geometry"/>
         </mxCell>
 
-        <mxCell id="feat3" value="✅ 智能目标选择与精确分割" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="700" y="780" width="300" height="40" as="geometry"/>
+        <mxCell id="feat3" value="✅ 智能目标选择，精确分割抓取" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="780" y="960" width="340" height="35" as="geometry"/>
         </mxCell>
 
-        <mxCell id="feat4" value="✅ 语音反馈，友好交互体验" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="1020" y="780" width="300" height="40" as="geometry"/>
+        <mxCell id="feat4" value="✅ TTS语音反馈，友好交互体验" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="960" width="340" height="35" as="geometry"/>
         </mxCell>
 
-        <mxCell id="feat5" value="🎯 适用场景: 复杂场景多物体抓取，人机协作" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;fontSize=13;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="60" y="840" width="1260" height="40" as="geometry"/>
+        <mxCell id="feat5" value="🎯 适用场景: 复杂场景多物体识别抓取、人机协作智能交互" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFA726;strokeColor=#FB8C00;fontColor=#000000;align=center;fontSize=12;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="60" y="1015" width="1420" height="40" as="geometry"/>
         </mxCell>
 
-        <!-- 数据流箭头 -->
-        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;" edge="1" parent="1" source="voice-input" target="asr">
+        <!-- 数据流箭头 - 优化布局避免遮挡 -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#FB8C00;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="voice-input" target="asr">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="315"/>
+              <mxPoint x="300" y="227"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#00ACC1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="asr" target="text-result">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="asr" target="text-result">
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#43A047;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="camera" target="color-img-multi">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1" source="camera" target="color-img-multi">
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#43A047;exitX=0.5;exitY=1;entryX=0.7;entryY=0;" edge="1" parent="1" source="camera" target="depth-img-multi">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="text-result" target="vlm-input">
+        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#F57C00;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="text-result" target="vlm-input">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="390"/>
+              <mxPoint x="360" y="390"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#66BB6A;exitX=0.5;exitY=1;entryX=0.7;entryY=0;" edge="1" parent="1" source="color-img-multi" target="vlm-input">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="735" y="320"/>
+              <mxPoint x="940" y="320"/>
+              <mxPoint x="940" y="500"/>
+              <mxPoint x="440" y="500"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#FB8C00;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="vlm-server" target="vlm-output">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="color-img-multi" target="vlm-input">
+        <mxCell id="arrow8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#FFD54F;exitX=1;exitY=0.3;entryX=0;entryY=0.5;dashed=1;" edge="1" parent="1" source="vlm-output" target="tts">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="vlm-server" target="vlm-output">
+        <mxCell id="arrow9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#9C27B0;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="vlm-output" target="sam-bbox">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="650"/>
+              <mxPoint x="278" y="650"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#BA68C8;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="sam-bbox" target="sam-mask">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#e1d5e7;strokeColor=#9673a6;dashed=1;" edge="1" parent="1" source="vlm-output" target="tts">
+        <mxCell id="arrow11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#0277BD;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="sam-mask" target="pointcloud-gen">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="815"/>
+              <mxPoint x="760" y="880"/>
+              <mxPoint x="980" y="880"/>
+              <mxPoint x="980" y="224"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#0288D1;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="pointcloud-gen" target="graspnet-pred">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="vlm-output" target="sam-bbox">
+        <mxCell id="arrow13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#0288D1;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="graspnet-pred" target="collision-check">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="sam-bbox" target="sam-mask">
+        <mxCell id="arrow14" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#43A047;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="collision-check" target="pose-transform">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1445" y="320"/>
+              <mxPoint x="1250" y="320"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#66BB6A;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="pose-transform" target="final-pose">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="sam-mask" target="pointcloud-gen">
+        <mxCell id="arrow16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#81C784;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="final-pose" target="motion-control">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="pointcloud-gen" target="graspnet-pred">
+        <mxCell id="arrow17" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#AED581;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="motion-control" target="robot-control">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="graspnet-pred" target="collision-check">
-          <mxGeometry relative="1" as="geometry"/>
+        <!-- 标注文字 -->
+        <mxCell id="label1" value="语音流" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#FB8C00;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="280" y="185" width="60" height="20" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="collision-check" target="best-grasp">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="label2" value="视觉流" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#43A047;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="820" y="220" width="60" height="20" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1" source="best-grasp" target="pose-transform">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="label3" value="多模态" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#F57C00;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="390" width="60" height="20" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="pose-transform" target="final-pose">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="label4" value="分割" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#9C27B0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="620" y="650" width="50" height="20" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arrow16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="final-pose" target="pre-grasp-calc">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="arrow17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="pre-grasp-calc" target="motion-execute">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="arrow18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1" source="motion-execute" target="robot-control">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="label5" value="推理" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#0277BD;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1140" y="170" width="50" height="20" as="geometry"/>
         </mxCell>
 
       </root>

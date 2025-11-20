@@ -1,193 +1,284 @@
 <mxfile host="Electron" modified="2024-01-01T00:00:00.000Z" agent="Draw.io" etag="xxx" version="21.0.0" type="device">
   <diagram name="大模型任务分解架构" id="llm-task-decompose">
-    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1700" dy="950" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1000" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
 
         <!-- Title -->
-        <mxCell id="title" value="大模型任务分解架构 - vLLM部署与推理" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#0066cc;" vertex="1" parent="1">
-          <mxGeometry x="240" y="30" width="680" height="40" as="geometry"/>
+        <mxCell id="title" value="大模型任务分解架构 - vLLM部署与推理" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=26;fontStyle=1;fontColor=#0D47A1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="15" width="940" height="50" as="geometry"/>
         </mxCell>
 
         <!-- 用户层 -->
-        <mxCell id="user-layer" value="用户交互层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="80" y="100" width="320" height="40" as="geometry"/>
+        <mxCell id="user-layer" value="用户交互层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A237E;strokeColor=#0D47A1;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="380" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="user" value="👤 用户" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=16;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="100" y="160" width="80" height="80" as="geometry"/>
+        <mxCell id="user" value="👤 用户" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFA726;strokeColor=#EF6C00;fontSize=16;fontStyle=1;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="60" y="160" width="90" height="90" as="geometry"/>
         </mxCell>
 
-        <mxCell id="complex-task" value="复杂任务输入&#xa;&quot;请帮我整理桌面上的物品,&#xa;把书放到书架,&#xa;把杯子放到厨房,&#xa;把笔放到笔筒&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" vertex="1" parent="1">
-          <mxGeometry x="210" y="160" width="240" height="90" as="geometry"/>
+        <mxCell id="complex-task" value="复杂任务输入示例&#xa;&quot;请帮我整理桌面上的物品,&#xa;把书放到书架,&#xa;把杯子放到厨房,&#xa;把笔放到笔筒&quot;&#xa;&#xa;需要: 多物体识别+多目标执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCC80;strokeColor=#FB8C00;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="180" y="160" width="220" height="120" as="geometry"/>
         </mxCell>
 
         <!-- vLLM部署层 -->
-        <mxCell id="vllm-deploy" value="vLLM部署层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="80" y="290" width="1000" height="40" as="geometry"/>
+        <mxCell id="vllm-deploy" value="vLLM部署层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#01579B;strokeColor=#0277BD;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="320" width="1400" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="vllm-server" value="🖥️ vLLM服务器&#xa;主机: 192.168.1.6&#xa;端口: 1034&#xa;GPU利用率: 60%" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;" vertex="1" parent="1">
-          <mxGeometry x="100" y="350" width="180" height="90" as="geometry"/>
+        <mxCell id="deploy-file" value="📄 利用vllm部署私有化大模型/指令.txt" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0277BD;strokeColor=#01579B;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="385" width="1360" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="model-info" value="🧠 模型信息&#xa;名称: Qwen2.5-3B-Instruct&#xa;量化: GPTQ-Int8&#xa;服务名: Qwen3B&#xa;路径: /local/HXH/llm/..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="300" y="350" width="250" height="100" as="geometry"/>
+        <mxCell id="vllm-server" value="🖥️ vLLM服务器配置&#xa;主机: 192.168.1.6&#xa;端口: 1034&#xa;GPU利用率: 60%&#xa;设备: CUDA_VISIBLE_DEVICES=1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0288D1;strokeColor=#0277BD;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="435" width="200" height="110" as="geometry"/>
         </mxCell>
 
-        <mxCell id="deploy-cmd" value="部署命令&#xa;CUDA_VISIBLE_DEVICES=1 \&#xa;python -m vllm.entrypoints.openai.api_server \&#xa;  --model &quot;/path/to/Qwen2.5-3B-Instruct-GPTQ-Int8/&quot; \&#xa;  --served-model-name &quot;Qwen3B&quot; \&#xa;  --host 0.0.0.0 --port 1034 \&#xa;  --gpu-memory-utilization 0.6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;fontSize=10;fontFamily=Courier New;" vertex="1" parent="1">
-          <mxGeometry x="570" y="350" width="480" height="120" as="geometry"/>
+        <mxCell id="model-info" value="🧠 模型信息&#xa;名称: Qwen2.5-3B-Instruct&#xa;量化: GPTQ-Int8&#xa;服务名: Qwen3B&#xa;模型路径: /local/HXH/llm/&#xa;Qwen2.5/Qwen2.5-3B-Instruct-GPTQ-Int8/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0288D1;strokeColor=#0277BD;fontColor=#FFFFFF;fontSize=9;align=left;" vertex="1" parent="1">
+          <mxGeometry x="280" y="435" width="280" height="110" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="deploy-cmd" value="🔧 部署命令&#xa;conda create -n vllm python=3.10&#xa;pip install vllm&#xa;&#xa;CUDA_VISIBLE_DEVICES=1 \&#xa;python -m vllm.entrypoints.openai.api_server \&#xa;  --model &quot;/path/to/Qwen2.5-3B-Instruct-GPTQ-Int8/&quot; \&#xa;  --served-model-name &quot;Qwen3B&quot; \&#xa;  --host 0.0.0.0 --port 1034 \&#xa;  --gpu-memory-utilization 0.6" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4FC3F7;strokeColor=#29B6F6;fontColor=#000000;fontSize=9;align=left;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="580" y="435" width="420" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="vllm-features" value="vLLM核心特性&#xa;⚡ PagedAttention算法&#xa;💾 动态批处理优化&#xa;🚀 高吞吐量推理&#xa;📊 GPU内存高效利用" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#81D4FA;strokeColor=#4FC3F7;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="435" width="200" height="110" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="api-compat" value="🔌 API兼容性&#xa;OpenAI兼容接口&#xa;易于集成现有系统&#xa;支持流式输出" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B3E5FC;strokeColor=#81D4FA;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="435" width="180" height="80" as="geometry"/>
         </mxCell>
 
         <!-- API接口层 -->
-        <mxCell id="api-layer" value="OpenAI兼容API层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="80" y="500" width="1000" height="40" as="geometry"/>
+        <mxCell id="api-layer" value="OpenAI兼容API层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1B5E20;strokeColor=#2E7D32;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="620" width="1400" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="api-endpoint" value="API端点&#xa;POST /v1/chat/completions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="100" y="560" width="200" height="60" as="geometry"/>
+        <mxCell id="api-endpoint" value="API端点&#xa;POST /v1/chat/completions&#xa;标准OpenAI格式" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#43A047;strokeColor=#388E3C;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="685" width="200" height="70" as="geometry"/>
         </mxCell>
 
-        <mxCell id="request-format" value="请求格式&#xa;{&#xa;  &quot;model&quot;: &quot;Qwen3B&quot;,&#xa;  &quot;messages&quot;: [...]&#xa;}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;fontFamily=Courier New;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="320" y="560" width="200" height="80" as="geometry"/>
+        <mxCell id="request-format" value="📥 请求格式&#xa;{&#xa;  &quot;model&quot;: &quot;Qwen3B&quot;,&#xa;  &quot;messages&quot;: [&#xa;    {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: &quot;...&quot;},&#xa;    {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;...&quot;}&#xa;  ]&#xa;}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#66BB6A;strokeColor=#43A047;fontColor=#000000;fontSize=8;align=left;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="280" y="685" width="280" height="120" as="geometry"/>
         </mxCell>
 
-        <mxCell id="response-format" value="响应格式&#xa;{&#xa;  &quot;choices&quot;: [{&#xa;    &quot;message&quot;: {&#xa;      &quot;content&quot;: &quot;...&quot;&#xa;    }&#xa;  }]&#xa;}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;fontFamily=Courier New;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="540" y="560" width="200" height="100" as="geometry"/>
+        <mxCell id="response-format" value="📤 响应格式&#xa;{&#xa;  &quot;choices&quot;: [{&#xa;    &quot;message&quot;: {&#xa;      &quot;role&quot;: &quot;assistant&quot;,&#xa;      &quot;content&quot;: &quot;分解后的子任务...&quot;&#xa;    }&#xa;  }],&#xa;  &quot;usage&quot;: {...}&#xa;}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#81C784;strokeColor=#66BB6A;fontColor=#000000;fontSize=8;align=left;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="580" y="685" width="280" height="120" as="geometry"/>
         </mxCell>
 
         <!-- 任务分解层 -->
-        <mxCell id="decompose-layer" value="任务分解层 (LLM推理)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="480" y="100" width="600" height="40" as="geometry"/>
+        <mxCell id="decompose-layer" value="任务分解层 (LLM推理)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E65100;strokeColor=#EF6C00;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="480" y="90" width="560" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="llm-reasoning" value="🤖 LLM推理引擎&#xa;• 理解复杂任务&#xa;• 分解子任务&#xa;• 生成执行计划" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;" vertex="1" parent="1">
-          <mxGeometry x="500" y="160" width="200" height="90" as="geometry"/>
+        <mxCell id="llm-file" value="📄 try.py - LLM调用示例代码" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EF6C00;strokeColor=#E65100;fontColor=#FFFFFF;fontSize=11;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="500" y="155" width="520" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="subtasks" value="子任务分解结果&#xa;1️⃣ 识别&quot;书&quot;→移动到书架&#xa;2️⃣ 识别&quot;杯子&quot;→移动到厨房&#xa;3️⃣ 识别&quot;笔&quot;→移动到笔筒&#xa;&#xa;每个子任务包含:&#xa;• 目标物体&#xa;• 放置位置&#xa;• 执行优先级" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="730" y="160" width="320" height="140" as="geometry"/>
+        <mxCell id="llm-reasoning" value="🤖 LLM推理引擎&#xa;• 理解复杂任务语义&#xa;• 识别多个子目标&#xa;• 生成执行顺序&#xa;• 输出结构化指令" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F57C00;strokeColor=#EF6C00;fontColor=#000000;fontSize=10;align=left;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="200" width="220" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="subtasks" value="子任务分解结果示例&#xa;📌 任务1: 识别&quot;书&quot; → 抓取 → 放置到书架&#xa;   • 目标物体: 书&#xa;   • 目标位置: 书架&#xa;   • 优先级: 1&#xa;&#xa;📌 任务2: 识别&quot;杯子&quot; → 抓取 → 放置到厨房&#xa;   • 目标物体: 杯子&#xa;   • 目标位置: 厨房  &#xa;   • 优先级: 2&#xa;&#xa;📌 任务3: 识别&quot;笔&quot; → 抓取 → 放置到笔筒&#xa;   • 目标物体: 笔&#xa;   • 目标位置: 笔筒&#xa;   • 优先级: 3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCC80;strokeColor=#FB8C00;fontColor=#000000;fontSize=9;align=left;" vertex="1" parent="1">
+          <mxGeometry x="740" y="200" width="280" height="220" as="geometry"/>
         </mxCell>
 
         <!-- 执行规划层 -->
-        <mxCell id="plan-layer" value="执行规划层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="480" y="340" width="600" height="40" as="geometry"/>
+        <mxCell id="plan-layer" value="执行规划层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4A148C;strokeColor=#6A1B9A;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="90" width="360" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="task1" value="任务1: 书→书架&#xa;• 检测&quot;书&quot;&#xa;• 抓取计划&#xa;• 路径规划&#xa;• 放置执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;" vertex="1" parent="1">
-          <mxGeometry x="500" y="400" width="160" height="90" as="geometry"/>
+        <mxCell id="task1" value="任务1执行流程&#xa;📖 检测&quot;书&quot;&#xa;↓&#xa;🤖 抓取规划&#xa;↓&#xa;🚶 路径规划&#xa;↓&#xa;📚 放置执行(书架)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B1FA2;strokeColor=#6A1B9A;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="155" width="100" height="140" as="geometry"/>
         </mxCell>
 
-        <mxCell id="task2" value="任务2: 杯子→厨房&#xa;• 检测&quot;杯子&quot;&#xa;• 抓取计划&#xa;• 路径规划&#xa;• 放置执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;" vertex="1" parent="1">
-          <mxGeometry x="680" y="400" width="160" height="90" as="geometry"/>
+        <mxCell id="task2" value="任务2执行流程&#xa;☕ 检测&quot;杯子&quot;&#xa;↓&#xa;🤖 抓取规划&#xa;↓&#xa;🚶 路径规划&#xa;↓&#xa;🍽️ 放置执行(厨房)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B1FA2;strokeColor=#6A1B9A;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="155" width="100" height="140" as="geometry"/>
         </mxCell>
 
-        <mxCell id="task3" value="任务3: 笔→笔筒&#xa;• 检测&quot;笔&quot;&#xa;• 抓取计划&#xa;• 路径规划&#xa;• 放置执行" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;" vertex="1" parent="1">
-          <mxGeometry x="860" y="400" width="160" height="90" as="geometry"/>
+        <mxCell id="task3" value="任务3执行流程&#xa;✏️ 检测&quot;笔&quot;&#xa;↓&#xa;🤖 抓取规划&#xa;↓&#xa;🚶 路径规划&#xa;↓&#xa;📝 放置执行(笔筒)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7B1FA2;strokeColor=#6A1B9A;fontColor=#FFFFFF;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="155" width="100" height="140" as="geometry"/>
         </mxCell>
 
         <!-- 系统集成层 -->
-        <mxCell id="integration-layer" value="系统集成层" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="80" y="680" width="1000" height="40" as="geometry"/>
+        <mxCell id="integration-layer" value="系统集成层 - 各功能模块协同" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#006064;strokeColor=#00838F;fontSize=16;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="840" width="1400" height="45" as="geometry"/>
         </mxCell>
 
-        <mxCell id="vision-module" value="视觉模块&#xa;YOLO+SAM&#xa;目标检测" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="100" y="740" width="140" height="60" as="geometry"/>
+        <mxCell id="vision-module" value="视觉模块&#xa;YOLO+SAM&#xa;目标检测+分割&#xa;📄 cv_process.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00ACC1;strokeColor=#0097A7;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="905" width="140" height="80" as="geometry"/>
         </mxCell>
 
-        <mxCell id="grasp-module" value="抓取模块&#xa;GraspNet/传统&#xa;位姿规划" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="260" y="740" width="140" height="60" as="geometry"/>
+        <mxCell id="grasp-module" value="抓取模块&#xa;GraspNet/传统&#xa;位姿规划&#xa;📄 grasp_process.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00ACC1;strokeColor=#0097A7;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="220" y="905" width="150" height="80" as="geometry"/>
         </mxCell>
 
-        <mxCell id="motion-module" value="运动模块&#xa;路径规划&#xa;避障控制" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="420" y="740" width="140" height="60" as="geometry"/>
+        <mxCell id="coord-module" value="坐标转换&#xa;手眼标定&#xa;坐标系变换&#xa;📄 convert_d.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00ACC1;strokeColor=#0097A7;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="390" y="905" width="140" height="80" as="geometry"/>
         </mxCell>
 
-        <mxCell id="robot-module" value="机械臂模块&#xa;运动控制&#xa;夹爪控制" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="580" y="740" width="140" height="60" as="geometry"/>
+        <mxCell id="motion-module" value="运动模块&#xa;路径规划&#xa;避障控制&#xa;📄 grasp.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00ACC1;strokeColor=#0097A7;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="550" y="905" width="140" height="80" as="geometry"/>
         </mxCell>
 
-        <mxCell id="feedback-module" value="反馈模块&#xa;执行监控&#xa;异常处理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="740" y="740" width="140" height="60" as="geometry"/>
+        <mxCell id="robot-module" value="机械臂模块&#xa;运动控制&#xa;夹爪控制&#xa;📄 robotic_arm.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00ACC1;strokeColor=#0097A7;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="710" y="905" width="150" height="80" as="geometry"/>
         </mxCell>
 
-        <mxCell id="llm-replan" value="LLM重规划&#xa;失败重试&#xa;任务调整" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
-          <mxGeometry x="900" y="740" width="140" height="60" as="geometry"/>
+        <mxCell id="feedback-module" value="反馈模块&#xa;执行监控&#xa;异常处理&#xa;状态反馈" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00ACC1;strokeColor=#0097A7;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="880" y="905" width="140" height="80" as="geometry"/>
         </mxCell>
 
-        <!-- 关键优势 -->
-        <mxCell id="advantages" value="vLLM部署优势" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=14;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="760" y="560" width="320" height="40" as="geometry"/>
+        <mxCell id="llm-replan" value="LLM重规划&#xa;失败重试&#xa;任务调整&#xa;动态优化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFA726;strokeColor=#FB8C00;fontColor=#000000;fontSize=10;align=left;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1040" y="905" width="140" height="80" as="geometry"/>
         </mxCell>
 
-        <mxCell id="adv1" value="⚡ 高吞吐量推理 (PagedAttention)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="780" y="620" width="280" height="30" as="geometry"/>
+        <mxCell id="knowledge-base" value="知识库&#xa;物体位置记忆&#xa;场景理解&#xa;经验学习" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCC80;strokeColor=#FFB74D;fontColor=#000000;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="905" width="140" height="80" as="geometry"/>
         </mxCell>
 
-        <mxCell id="adv2" value="💾 GPU内存优化 (动态批处理)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="780" y="660" width="280" height="30" as="geometry"/>
+        <!-- 系统优势 -->
+        <mxCell id="advantages-title" value="大模型任务分解系统优势" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#37474F;strokeColor=#455A64;fontSize=14;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="880" y="685" width="560" height="40" as="geometry"/>
         </mxCell>
 
-        <mxCell id="adv3" value="🔌 OpenAI兼容API (易于集成)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="780" y="700" width="280" height="30" as="geometry"/>
+        <mxCell id="adv1" value="🧠 智能理解复杂任务语义" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="900" y="740" width="250" height="30" as="geometry"/>
         </mxCell>
 
-        <mxCell id="adv4" value="🏠 本地部署 (数据隐私保护)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" vertex="1" parent="1">
-          <mxGeometry x="780" y="740" width="280" height="30" as="geometry"/>
+        <mxCell id="adv2" value="📋 自动分解多步骤任务" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="740" width="250" height="30" as="geometry"/>
         </mxCell>
 
-        <!-- 数据流箭头 -->
-        <mxCell id="arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="complex-task" target="llm-reasoning">
+        <mxCell id="adv3" value="🔄 失败重规划与优化" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="900" y="785" width="250" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="adv4" value="🏠 本地部署保护隐私" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#546E7A;strokeColor=#455A64;fontColor=#FFFFFF;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="785" width="250" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- 数据流箭头 - 优化布局 -->
+        <mxCell id="arr1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#FB8C00;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="complex-task" target="llm-reasoning">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="220"/>
+              <mxPoint x="450" y="230"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#F57C00;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="llm-reasoning" target="subtasks">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arr2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="llm-reasoning" target="subtasks">
+        <mxCell id="arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#0277BD;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="llm-reasoning" target="vllm-server">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="320"/>
+              <mxPoint x="160" y="320"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arr4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#0288D1;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="vllm-server" target="api-endpoint">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="570"/>
+              <mxPoint x="120" y="570"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arr5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#7B1FA2;exitX=1;exitY=0.3;entryX=0;entryY=0.3;" edge="1" parent="1" source="subtasks" target="task1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="266"/>
+              <mxPoint x="1060" y="197"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arr6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#7B1FA2;exitX=1;exitY=0.5;entryX=0;entryY=0.3;" edge="1" parent="1" source="subtasks" target="task2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="310"/>
+              <mxPoint x="1060" y="197"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arr7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;strokeColor=#7B1FA2;exitX=1;exitY=0.7;entryX=0;entryY=0.3;" edge="1" parent="1" source="subtasks" target="task3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="354"/>
+              <mxPoint x="1060" y="197"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arr8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#00ACC1;exitX=0.5;exitY=1;entryX=0.1;entryY=0;" edge="1" parent="1" source="task1" target="vision-module">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1150" y="820"/>
+              <mxPoint x="74" y="820"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arr9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#00ACC1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="vision-module" target="grasp-module">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arr3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="llm-reasoning" target="vllm-server">
+        <mxCell id="arr10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#00ACC1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="grasp-module" target="coord-module">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arr4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;" edge="1" parent="1" source="vllm-server" target="api-endpoint">
+        <mxCell id="arr11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#00ACC1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="coord-module" target="motion-module">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arr5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="subtasks" target="task1">
+        <mxCell id="arr12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#00ACC1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="motion-module" target="robot-module">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arr6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="subtasks" target="task2">
+        <mxCell id="arr13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#FB8C00;exitX=1;exitY=0.5;entryX=0;entryY=0.5;dashed=1;" edge="1" parent="1" source="robot-module" target="feedback-module">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arr7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=3;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="subtasks" target="task3">
+        <mxCell id="arr14" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#FFB74D;exitX=1;exitY=0.5;entryX=0;entryY=0.5;dashed=1;" edge="1" parent="1" source="feedback-module" target="llm-replan">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arr8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="task1" target="vision-module">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="arr15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#FFB74D;exitX=0.5;exitY=0;entryX=0.5;entryY=1;dashed=1;" edge="1" parent="1" source="llm-replan" target="llm-reasoning">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="880"/>
+              <mxPoint x="1460" y="880"/>
+              <mxPoint x="1460" y="320"/>
+              <mxPoint x="610" y="320"/>
+            </Array>
+          </mxGeometry>
         </mxCell>
 
-        <mxCell id="arr9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="vision-module" target="grasp-module">
-          <mxGeometry relative="1" as="geometry"/>
+        <!-- 标注 -->
+        <mxCell id="label1" value="用户输入" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#FB8C00;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="420" y="195" width="70" height="20" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arr10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="grasp-module" target="motion-module">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="label2" value="LLM分解" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#F57C00;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="680" y="225" width="70" height="20" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arr11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="motion-module" target="robot-module">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="label3" value="执行流" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#00ACC1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="800" y="820" width="60" height="20" as="geometry"/>
         </mxCell>
 
-        <mxCell id="arr12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;dashed=1;" edge="1" parent="1" source="robot-module" target="feedback-module">
-          <mxGeometry relative="1" as="geometry"/>
-        </mxCell>
-
-        <mxCell id="arr13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;dashed=1;" edge="1" parent="1" source="feedback-module" target="llm-replan">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="label4" value="反馈重规划" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#FFB74D;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="980" y="860" width="80" height="20" as="geometry"/>
         </mxCell>
 
       </root>
